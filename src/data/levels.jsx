@@ -1,5 +1,5 @@
 
-import Fuji from "../assets/fuji--.png";
+import Fuji from "../assets/fujisanu.png";
 import Sakura from "../assets/new.png";
 import Torii from "../assets/toiri.png";
 
