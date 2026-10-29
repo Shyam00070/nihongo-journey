@@ -10,7 +10,7 @@ function GrammarLesson() {
   const [expandedItem, setExpandedItem] = useState(null);
 
   useEffect(() => {
-      import.meta.env.VITE_API_URL + `/api/grammar/${level}/${lessonNumber}`
+      fetch(import.meta.env.VITE_API_URL + `/api/grammar/${level}/${lessonNumber}`)
       .then((res) => res.json())
       .then((data) => setLesson(data));
   }, [level, lessonNumber]);

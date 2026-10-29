@@ -10,7 +10,7 @@ function LessonVocabulary() {
   const [lesson, setLesson] = useState(null);
 
   useEffect(() => {
-      import.meta.env.VITE_API_URL + `/api/lessons/${level}/${lessonNumber}`
+      fetch(import.meta.env.VITE_API_URL + `/api/lessons/${level}/${lessonNumber}`)
       .then((res) => res.json())
       .then((data) => setLesson(data));
   }, [level, lessonNumber]);

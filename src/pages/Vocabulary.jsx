@@ -10,7 +10,7 @@ function Vocabulary() {
   const navigate = useNavigate();
 
   useEffect(() => {
-     import.meta.env.VITE_API_URL + `/api/lessons/${level}`
+     fetch(import.meta.env.VITE_API_URL + `/api/lessons/${level}`)
       .then((res) => res.json())
       .then((data) => setLessons(data));
   }, [level]);
