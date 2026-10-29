@@ -9,7 +9,7 @@ function Grammar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/grammar/${level}`)
+      import.meta.env.VITE_API_URL + `/api/grammar/${level}`
       .then((res) => res.json())
       .then((data) => setLessons(data));
   }, [level]);

@@ -10,7 +10,7 @@ function Kanji() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/kanji/${level}`)
++      import.meta.env.VITE_API_URL + `/api/kanji/${level}`
       .then((res) => res.json())
       .then((data) => setLessons(data));
   }, [level]);

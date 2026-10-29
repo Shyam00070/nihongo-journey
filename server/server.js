@@ -16,21 +16,15 @@ app.use(cors());
 app.use(express.json());
 
 
-// =====================================================
-// HOME
-// =====================================================
+
 
 app.get("/", (req, res) => {
   res.send("Nihongo Journey backend is running!");
 });
 
 
-// =====================================================
-// VOCABULARY
-// =====================================================
 
-// Get all lessons in a level
-// Example: http://localhost:5000/api/lessons/N5
+
 app.get("/api/lessons/:level", async (req, res) => {
   try {
     const lessons = await Lesson.find({
@@ -46,8 +40,6 @@ app.get("/api/lessons/:level", async (req, res) => {
 });
 
 
-// Get one vocabulary lesson
-// Example: http://localhost:5000/api/lessons/N5/1
 app.get("/api/lessons/:level/:lessonNumber", async (req, res) => {
   try {
     const lesson = await Lesson.findOne({
@@ -70,12 +62,7 @@ app.get("/api/lessons/:level/:lessonNumber", async (req, res) => {
 });
 
 
-// =====================================================
-// GRAMMAR
-// =====================================================
 
-// Get all grammar lessons in a level
-// Example: http://localhost:5000/api/grammar/N5
 app.get("/api/grammar/:level", async (req, res) => {
   try {
     const grammar = await Grammar.find({
@@ -91,8 +78,7 @@ app.get("/api/grammar/:level", async (req, res) => {
 });
 
 
-// Get one grammar lesson
-// Example: http://localhost:5000/api/grammar/N5/1
+
 app.get("/api/grammar/:level/:lessonNumber", async (req, res) => {
   try {
     const grammar = await Grammar.findOne({
@@ -115,12 +101,6 @@ app.get("/api/grammar/:level/:lessonNumber", async (req, res) => {
 });
 
 
-// =====================================================
-// KANJI
-// =====================================================
-
-// Get all kanji lessons in a level
-// Example: http://localhost:5000/api/kanji/N5
 app.get("/api/kanji/:level", async (req, res) => {
   try {
     const kanji = await Kanji.find({
@@ -136,8 +116,7 @@ app.get("/api/kanji/:level", async (req, res) => {
 });
 
 
-// Get one kanji lesson
-// Example: http://localhost:5000/api/kanji/N5/1
+
 app.get("/api/kanji/:level/:lessonNumber", async (req, res) => {
   try {
     const kanji = await Kanji.findOne({
@@ -160,9 +139,6 @@ app.get("/api/kanji/:level/:lessonNumber", async (req, res) => {
 });
 
 
-// =====================================================
-// MONGODB CONNECTION
-// =====================================================
 
 mongoose
   .connect(process.env.MONGO_URI)

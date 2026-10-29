@@ -13,7 +13,7 @@ function KanjiLessons() {
   const [expandedItem, setExpandedItem] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/kanji/${level}/${lessonNumber}`)
+      import.meta.env.VITE_API_URL + `/api/kanji/${level}/${lessonNumber}`
       .then((res) => res.json())
       .then((data) => setLesson(data));
   }, [level, lessonNumber]);
